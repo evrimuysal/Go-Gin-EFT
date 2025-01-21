@@ -1,6 +1,6 @@
 GO_BUILD_ENV := CGO_ENABLED=0 GOOS=linux GOARCH=amd64
 DOCKER_BUILD=$(shell pwd)/.docker_build
-DOCKER_CMD=$(DOCKER_BUILD)/go-getting-started
+DOCKER_CMD=$(DOCKER_BUILD)/gin-mongo-api
 
 $(DOCKER_CMD): clean
 	mkdir -p $(DOCKER_BUILD)
@@ -10,4 +10,4 @@ clean:
 	rm -rf $(DOCKER_BUILD)
 
 heroku: $(DOCKER_CMD)
-	heroku container:push web -a go-getting-started
+	heroku container:push web -a gin-mongo-api

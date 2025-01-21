@@ -2,7 +2,7 @@
   "name": "Dupep Caller",
   "description": "Dupep Caller is a simple app that demonstrates how to use the Dupep API to make calls.",
   "keywords": [
-    "getting-started",
+    "gin-mongo-api",
     "go",
     "sample",
     "example"
