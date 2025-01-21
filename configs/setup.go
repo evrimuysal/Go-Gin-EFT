@@ -10,6 +10,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+var UserCollection *mongo.Collection
+
 func ConnectDB() *mongo.Client {
 	client, err := mongo.NewClient(options.Client().ApplyURI(EnvMongoURI()))
 	if err != nil {
@@ -33,10 +35,8 @@ func ConnectDB() *mongo.Client {
 	return client
 }
 
-// Client instance
 var DB *mongo.Client = ConnectDB()
 
-// getting database collections
 func GetCollection(client *mongo.Client, collectionName string) *mongo.Collection {
 	collection := client.Database("golangAPI").Collection(collectionName)
 
